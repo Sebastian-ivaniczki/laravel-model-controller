@@ -5,7 +5,7 @@
         <h1 class="text-center my-4">Movies</h1>
         <div class="container my-4 d-flex justify-content-center flex-wrap ">
             @isset($movies)
-                @foreach ($movies as $movie)
+                @forelse ($movies as $movie)
                     <div class="card m-2" style="width: 18rem;">
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ $movie->original_title }}</h5>
@@ -16,7 +16,9 @@
 
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <h3>No films</h3>
+                @endforelse
             @endisset
 
 
